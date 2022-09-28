@@ -18,11 +18,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
- @Entity
- @Getter
- @Setter
- @NoArgsConstructor
- @AllArgsConstructor
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Transactions {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
