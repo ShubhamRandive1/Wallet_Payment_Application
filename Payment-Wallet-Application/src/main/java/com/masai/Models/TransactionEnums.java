@@ -1,5 +1,8 @@
 package com.masai.Models;
 
-public class TransactionEnums {
 
+public class TransactionEnums {
+	enum TransactionType{
+		
+	}
 }
