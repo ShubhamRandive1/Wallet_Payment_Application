@@ -2,8 +2,10 @@ package com.masai.ServiceLayer;
 
 import java.util.List;
 
+import javax.security.auth.login.AccountNotFoundException;
+
+import com.masai.Exceptions.BankAccountNotFound;
 import com.masai.Models.BankAccount;
-import com.masai.Models.Wallet;
 
 public interface BankAccountService {
 
