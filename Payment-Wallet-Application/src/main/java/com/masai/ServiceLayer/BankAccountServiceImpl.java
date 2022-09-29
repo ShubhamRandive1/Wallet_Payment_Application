@@ -3,57 +3,115 @@ package com.masai.ServiceLayer;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.security.auth.login.AccountNotFoundException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.masai.LoginSession.loginSession;
 import com.masai.Models.BankAccount;
 import com.masai.Models.Wallet;
 import com.masai.Repository.BankAccountDao;
+import com.masai.Repository.WalletDao;
+import com.masai.Repository.loginSessionDao;
 
-public class BankAccountServiceImpl implements  BankAccountService {
+
+@Service
+public class BankAccountServiceImpl implements BankAccountService {
 
 	@Autowired
-	private BankAccountDao BADAO;
+	BankAccountDao bankAccDao;
+	
+	@Autowired
+	WalletDao walletdao;
+	
+	@Autowired
+	loginSessionDao sessionDao;
+	
+	@Override
+	public String addAccount(BankAccount bankAccount,Integer walletId, String key) {
+
+
+		   
+		   Optional<loginSession> currentUser =  sessionDao.checkCustomerByUserId(key);
+		   
+		   if(currentUser.isPresent()) {
+
+			  
+				
+				
+				  Optional<Wallet> wallet =   walletdao.checkWalletById(walletId);
+				   
+				  if(wallet.isPresent()) {
+					  wallet.get().getBankAccount().add(bankAccount);
+						
+	        
+				
+				
+				
+				walletdao.save(wallet.get());
+					  
+					  
+				  }else {
+					  return "wallet not found";
+				  }
+				  
+				  
+				return bankAccount.getBankName()+" is successfully added..";
+		   }
+		   
+			return "user not found "+walletId;
+}
+
 
 	@Override
-	public Wallet addAccount(BankAccount bacc) {
-		
-		BankAccount bankAccount = BADAO.save(bacc);
-  
-		Wallet wallet =	bankAccount.getWallet();
-		return wallet;
-	}
-
-	@Override
-	public Wallet removeAccount(BankAccount bacc) {
-		Optional<BankAccount> bankAccount  = BADAO.findById(bacc.getAccountNo());
-		
-		if(bankAccount.get() != null) {
-			BADAO.delete(bacc);
-			
-			return bankAccount.get().getWallet();
+	public BankAccount getAccountByAccountNumber(Integer accountNumber) throws AccountNotFoundException {
+	
+		Optional<BankAccount> opt = bankAccDao.findById(accountNumber);
+	    
+		if(opt.isPresent()) {
+			return opt.get();
 		}
-		else {
-			throw new BankAccountException("Bank Account with this a/n does't exist : "+bacc.getAccountNo());
-		}
 		
-		
-		
-
+	    throw new BankAccountNotFound("Bank Account With not Found with given account number "+accountNumber);
 	}
+
 
 	@Override
-	public BankAccount viewAccount(Wallet wallet) {
-		return null;
+	public String removeAccount(Integer accountNumber, String key) throws BankAccountNotFound {
+	
+	Optional<loginSession> user = sessionDao.checkCustomerByUserId(key);
+		
+	if(user.isPresent()) {
+		 Optional<BankAccount> account =    bankAccDao.findByAccountNo(accountNumber);
+		    
+		  if(!account.isPresent()) {
+			  throw new BankAccountNotFound("bank account not found in our database");
+			  
+		  }
+		  
+		  bankAccDao.deleteById(accountNumber);
+		  
+		  return "Bank Account deleted  Successfully";
 	}
+	
+	return "wrong key";	 
+	}
+	
+	
+	
 
+	
 	@Override
-	public List<BankAccount> viewAllAccount(Wallet wallet) {
-		// TODO Auto-generated method stub
-		return null;
+	public   List<BankAccount>  viewAllBankAccountByWalletId(Integer walletId) throws BankAccountNotFound {
+	
+		
+	Wallet wallet =	 walletdao.getById(walletId);
+		
+    List<BankAccount> banks =  	wallet.getBankAccount();
+    
+    
+    return banks;
 	}
-	
-	
-	
-	
 	
 }
