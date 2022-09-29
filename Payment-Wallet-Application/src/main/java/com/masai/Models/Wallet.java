@@ -28,6 +28,26 @@ public class Wallet {
 	@Min(value = 0, message = "Balance Should Not Be In Negative")
 	private double balance;
 	
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "wallet")
+	private List<BankAccount> bankAccount;
+	
+	@JsonIgnore
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "wallet")
+	private Customer customer;
+	
+	
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "wallet")
+	private List<BilingPayment> billpayment;
+	
+	@JsonIgnore
+	@OneToMany
+	private List<Transaction> transcations;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "wallet")
+	private List<BenificiaryDetails> bd = new ArrayList<>();
+	
 
 }
 
