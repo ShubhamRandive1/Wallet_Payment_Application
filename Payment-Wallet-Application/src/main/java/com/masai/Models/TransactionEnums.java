@@ -1,5 +1,11 @@
 package com.masai.Models;
 
-public class TransactionEnums {
+public enum TransactionEnums {
+  
+  WALLETBALANCEUPDATED,
+  
+	BANKBALANCEUPDATED,
+  
+	WALLETTOWALLETFOUNDTRANSFER;
 
 }
