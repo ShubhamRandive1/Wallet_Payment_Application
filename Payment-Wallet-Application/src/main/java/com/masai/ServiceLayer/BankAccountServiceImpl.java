@@ -66,7 +66,7 @@ public class BankAccountServiceImpl implements BankAccountService {
 
 
 	@Override
-	public BankAccount getAccountByAccountNumber(Integer accountNumber) throws BankAccountNotFound {
+	public BankAccount getAccountByAccountNumber(Integer accountNumber) throws AccountNotFoundException {
 	
 		Optional<BankAccount> opt = bankAccDao.findById(accountNumber);
 	     
@@ -74,7 +74,7 @@ public class BankAccountServiceImpl implements BankAccountService {
 			return opt.get();
 		}
 		
-	    throw new BankAccountNotFound("Bank Account With not Found with given account number "+accountNumber);
+	    throw new AccountNotFoundException("Bank Account With not Found with given account number "+accountNumber);
 	}
 
 
