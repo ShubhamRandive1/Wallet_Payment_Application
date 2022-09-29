@@ -7,12 +7,13 @@ import com.masai.Models.Wallet;
 
 public interface BankAccountService {
 
-	public Wallet addAccount(BankAccount bacc);
+	public String addAccount(BankAccount bankAccount,Integer walletId,String key);
 	
-	public Wallet removeAccount(BankAccount bacc);
-	
-	
-	public BankAccount viewAccount(Wallet wallet);
+	public BankAccount getAccountByAccountNumber(Integer accountNumber) throws AccountNotFoundException;
 
-	public List<BankAccount> viewAllAccount(Wallet wallet);
+	public String removeAccount(Integer accountNumber,String key)throws BankAccountNotFound;
+	
+	public List<BankAccount> viewAllBankAccountByWalletId(Integer walletId) throws BankAccountNotFound;
+	
+
 }
