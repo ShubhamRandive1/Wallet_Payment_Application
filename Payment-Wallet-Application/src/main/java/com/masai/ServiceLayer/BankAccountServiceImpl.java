@@ -8,6 +8,7 @@ import javax.security.auth.login.AccountNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.masai.Exceptions.BankAccountNotFound;
 import com.masai.LoginSession.loginSession;
 import com.masai.Models.BankAccount;
 import com.masai.Models.Wallet;
@@ -57,7 +58,7 @@ public class BankAccountServiceImpl implements BankAccountService {
 				  }
 				  
 				  
-				return bankAccount.getBankName()+" is successfully added..";
+				return bankAccount.getBankname()+" is successfully added..";
 		   }
 		   
 			return "user not found "+walletId;
@@ -65,7 +66,7 @@ public class BankAccountServiceImpl implements BankAccountService {
 
 
 	@Override
-	public BankAccount getAccountByAccountNumber(Integer accountNumber) throws AccountNotFoundException {
+	public BankAccount getAccountByAccountNumber(Integer accountNumber) throws BankAccountNotFound {
 	
 		Optional<BankAccount> opt = bankAccDao.findById(accountNumber);
 	     
