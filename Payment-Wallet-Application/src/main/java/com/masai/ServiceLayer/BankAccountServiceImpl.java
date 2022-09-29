@@ -68,7 +68,7 @@ public class BankAccountServiceImpl implements BankAccountService {
 	public BankAccount getAccountByAccountNumber(Integer accountNumber) throws AccountNotFoundException {
 	
 		Optional<BankAccount> opt = bankAccDao.findById(accountNumber);
-	    
+	     
 		if(opt.isPresent()) {
 			return opt.get();
 		}
