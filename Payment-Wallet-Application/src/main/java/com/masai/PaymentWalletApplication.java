@@ -9,5 +9,6 @@ public class PaymentWalletApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PaymentWalletApplication.class, args);
 	}
+	// validation config
 
 }
