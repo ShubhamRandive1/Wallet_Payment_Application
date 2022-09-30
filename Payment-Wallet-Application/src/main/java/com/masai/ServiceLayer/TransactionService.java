@@ -10,7 +10,7 @@ import jakarta.transaction.Transaction;
 public interface TransactionService {
 	
 	
-    public Transactions addTansaction(Transaction trans);
+    public Transactions addTansaction(Transactions trans);
 	
 	public List<Transactions> viewAllTransactions(String key,Integer walletId) throws TransactionNotFoundException;
 	
