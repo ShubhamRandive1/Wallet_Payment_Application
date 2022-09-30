@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.masai.Exceptions.TransactionNotFoundException;
 import com.masai.Exceptions.UserNotFoundException;
@@ -20,6 +21,7 @@ import com.masai.Repository.loginSessionDao;
 
 import jakarta.transaction.Transaction;
 
+@Service
 public class TransactionServiceImpl implements TransactionService{
 
 	
@@ -35,21 +37,21 @@ public class TransactionServiceImpl implements TransactionService{
 	
 	
 	@Override
-	public Transaction addTansaction(Transaction trans) {
+	public Transactions addTansaction(Transaction trans) {
 		// TODO Auto-generated method stub
 		Wallet wallet = ((Transactions) trans).getWallet();
 		
-		Transaction transactions = tDao.save(trans);
+		Transactions transactions = tDao.save(trans);
 		((Transactions) transactions).setWallet(wallet);
 		
 		return transactions;
 	}
 
 	@Override
-	public List<Transaction> viewAllTransactions(String key, Integer walletId) throws TransactionNotFoundException {
+	public List<Transactions> viewAllTransactions(String key, Integer walletId) throws TransactionNotFoundException {
 		// TODO Auto-generated method stub
 		
-		Optional<loginSession> optionalUserSession = userSessionDao.findById(key);
+		Optional<loginSession> optionalUserSession = userSessionDao.checkCustomerByUserId(key);
 		
 		if(!optionalUserSession.isPresent())
 		{
@@ -62,7 +64,7 @@ public class TransactionServiceImpl implements TransactionService{
 			{
 				throw new WalletNotFound("Wallet not found");
 			}
-			List <Transaction>  transations = wallet.get().getTranscations();
+			List <Transactions>  transations = wallet.get().getTranscations();
 			
 			if(transations.size() >0)
 			{
@@ -78,7 +80,7 @@ public class TransactionServiceImpl implements TransactionService{
 	}
 
 	@Override
-	public List<Transaction> viewTransactionByDate(Integer walletId, String date) throws TransactionNotFoundException {
+	public List<Transactions> viewTransactionByDate(Integer walletId, String date) throws TransactionNotFoundException {
 		// TODO Auto-generated method stub
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -90,11 +92,11 @@ public class TransactionServiceImpl implements TransactionService{
 		{
 			throw new WalletNotFound("Wallet not found");
 		}
-		List <Transaction>  transations = wallet.get().getTranscations();
+		List <Transactions>  transations = wallet.get().getTranscations();
 		
-		List <Transaction>  transationsDWIthDate = new ArrayList<>();
+		List <Transactions>  transationsDWIthDate = new ArrayList<>();
 		
-		for(Transaction tc : transations )
+		for(Transactions tc : transations )
 		{
 			if(tc.getTransactionDate().equals(ld))
 			{
@@ -116,10 +118,10 @@ public class TransactionServiceImpl implements TransactionService{
 	}
 
 	@Override
-	public List<Transaction> viewAllTransactions() throws TransactionNotFoundException {
+	public List<Transactions> viewAllTransactions() throws TransactionNotFoundException {
 		// TODO Auto-generated method stub
 		
-		List<Transaction> transactions =  tDao.findAll();
+		List<Transactions> transactions =  tDao.findAll();
 		if(transactions.size() >0)
 		{
 			return transactions;

@@ -1,9 +1,18 @@
 package com.masai.Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.transaction.Transaction;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -39,11 +48,11 @@ public class Wallet {
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "wallet")
-	private List<BilingPayment> billpayment;
+	private List<BillingPayment> billpayment;
 	
 	@JsonIgnore
 	@OneToMany
-	private List<Transaction> transcations;
+	private List<Transactions> transcations;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "wallet")
 	private List<BenificiaryDetails> bd = new ArrayList<>();

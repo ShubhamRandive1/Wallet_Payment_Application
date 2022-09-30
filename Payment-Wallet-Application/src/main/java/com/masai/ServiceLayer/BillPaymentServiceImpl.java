@@ -51,7 +51,6 @@ public class BillPaymentServiceImpl implements BillPaymentService {
 		} else {
 			throw new Exception("Wallet Not found");
 		}
-		return null;
 	}
 
 	@Override

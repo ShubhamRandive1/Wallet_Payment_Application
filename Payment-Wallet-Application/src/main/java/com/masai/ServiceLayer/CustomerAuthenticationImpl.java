@@ -47,8 +47,8 @@ public class CustomerAuthenticationImpl implements CustomerAuthentication{
 	    	
 	    	String key = RandomString.make(10);
 	    	
-	    	loginSession userSession = new loginSession(newCustomer1.getCustomerId(),LocalDateTime.now(),key);
-
+	    	loginSession userSession = new com.masai.Models.loginSession(customerId1, key, LocalDateTime.now())
+	    	
 	         sessionDao.save(userSession);
 	         
 	         return userSession.toString();
@@ -63,7 +63,7 @@ public class CustomerAuthenticationImpl implements CustomerAuthentication{
 	public String logOut(String key) {
 		// TODO Auto-generated method stub
 		
-		Optional<loginSession> currentUser =	sessionDao.findById(key);
+		Optional<loginSession> currentUser =	sessionDao.checkCustomerByUserId(key);
 		
 		 if(!currentUser.isPresent()) {
 

@@ -12,6 +12,7 @@ import com.masai.Exceptions.InvalidAccountException;
 import com.masai.Exceptions.WalletNotFound;
 import com.masai.Models.BankAccount;
 import com.masai.Models.Customer;
+import com.masai.Models.Transactions;
 import com.masai.Models.Wallet;
 import com.masai.Repository.BankAccountDao;
 import com.masai.Repository.CustomerDao;
@@ -74,13 +75,13 @@ public class WalletServiceImpl implements WalletService{
 		sourceWallet.setBalance(sourceWallet.getBalance()-amount);
 		TargetWallet.setBalance(TargetWallet.getBalance()+amount);
 		
-		Transaction sourceTransaction = new Transaction();
+		Transactions sourceTransaction = new Transactions();
 		sourceTransaction.setTransactionType("WALLETTOWALLETFOUNDTRANSFER");
 		sourceTransaction.setTransactionDate(LocalDate.now());
 		sourceTransaction.setAmount(amount);
 		sourceTransaction.setDescription("Fund Transfer from " +sourceMobileNo+ " To "+ targetMobileNo);
 		
-		Transaction targetTransaction = new Transaction();
+		Transactions targetTransaction = new Transactions();
 		targetTransaction.setTransactionType("WALLETTOWALLETFOUNDTRANSFER");
 		targetTransaction.setTransactionDate(LocalDate.now());
 		targetTransaction.setAmount(amount);
@@ -121,7 +122,7 @@ public class WalletServiceImpl implements WalletService{
 						bankDao.save(ListofBank);
 						walletDao.save(wallet);
 						
-						Transaction transaction = new Transaction();
+						Transactions transaction = new Transactions();
 						transaction.setTransactionType("BankToWallet");
 						transaction.setTransactionDate(LocalDate.now());
 						transaction.setAmount(amount);
@@ -167,7 +168,7 @@ public class WalletServiceImpl implements WalletService{
 							bankDao.save(ListofBank);
 							walletDao.save(wallet);
 							
-							Transaction transaction = new Transaction();
+							Transactions transaction = new Transactions();
 							transaction.setTransactionType("BankToWallet");
 							transaction.setTransactionDate(LocalDate.now());
 							transaction.setAmount(amount);
