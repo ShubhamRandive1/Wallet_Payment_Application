@@ -16,28 +16,22 @@ import com.masai.ServiceLayer.BillPaymentService;
 
 @RestController
 public class BillPaymentController {
-	
-	@Autowired
-	
-	private BillPaymentService billPayService;
-	
 
-	
+	@Autowired
+	private BillPaymentService billPayService;
 
 	@PostMapping("/Bills/{walletId}")
-	public String addBill(@RequestBody BillingPayment pay, @PathVariable("walletId") Integer wallId) 
-	{
-		return billPayService.addBillPayment(pay,wallId);
+	public ResponseEntity<BillingPayment> addBill(@RequestBody BillingPayment pay,
+			@PathVariable("walletId") Integer wallId) throws Exception {
+		BillingPayment bp = billPayService.addBillPayment(pay, wallId);
+		return new ResponseEntity<BillingPayment>(bp, HttpStatus.CREATED);
 	}
-	
-	
-	
+
 	@GetMapping("/Bills")
-	ResponseEntity<List<BillingPayment>> getBillDetails() throws Exception{
+	ResponseEntity<List<BillingPayment>> getBillDetails() throws Exception {
 		List<BillingPayment> bills = billPayService.viewBillPayment();
-		return new ResponseEntity<>(bills, HttpStatus.OK);
-		
+		return new ResponseEntity<List<BillingPayment>>(bills, HttpStatus.OK);
+
 	}
-	
 
 }
