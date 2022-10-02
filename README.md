@@ -16,7 +16,9 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 
 #Team Member Roles And Responsibilities
-==========================================================================================================================================
+<br>
+<br>
+
 1) Bivek Rai - Team Lead, Responsible for creating and implementing the ER diagram and flow of the project.
 
 2) Yogesh Saini - Responsible for creating the Repository while making sure of proper implementation Of Controllers
@@ -31,7 +33,8 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 
 #Teach Stacks Implemented
-============================================================================================================================================
+<br>
+<br>
 - Java
 - Spring
 - Spring Boot JPA
@@ -46,7 +49,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 
-===============================================================================================================================================
+
 
 # Modules
 
@@ -75,10 +78,10 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 #Installation & Run
 
-==================================================================================================================================================
+<br>
+<br>
 
-
-
+```
 #changing the server port
 server.port=8888
 
@@ -94,15 +97,21 @@ spring.jpa.show-sql=true
 
 spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
 
+```
+
 <br>
 <br>
 
 #API Root Endpoint
-
-===================================================================================================================================================
-
+<br>
+<br>
+```
 https://localhost:8888/
-
+```
+<br>
+```
+https://localhost:8888/swagger-ui/#
+```
 <br>
 <br>
 
