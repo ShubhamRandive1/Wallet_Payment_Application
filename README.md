@@ -2,10 +2,7 @@
 
 - An Collabrative Project Consisting Of the 5 Developer Depicting the implementation of the payemnt wallet online transaction platform
 - An developement of RESTful API for an Online Payment Wallet application. This API performs all the fundamental CRUD operations of any Online Wallet Banking platform with user validation at every step.
-
 <br>
-<br>
-
 # ER Diagram
 The following Diagram depicts the flow of our Entity Relation Diagram to simplify the work flow.
 <br>
@@ -65,7 +62,8 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 #Features
 
-=================================================================================================================================================
+<br>
+<hr>
 
 - User Login authrntication
 - validation for the account number
@@ -108,7 +106,7 @@ spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
 ```
 https://localhost:8888/
 ```
-<br>
+
 ```
 https://localhost:8888/swagger-ui/#
 ```
