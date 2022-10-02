@@ -16,7 +16,9 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 <hr>
+  
 # Team Member Roles And Responsibilities
+  
 <hr>
 <br>
 <br>
