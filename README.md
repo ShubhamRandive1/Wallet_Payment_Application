@@ -1,9 +1,10 @@
 # Wallet_Payment_Application
-
+<hr>
 - An Collabrative Project Consisting Of the 5 Developer Depicting the implementation of the payemnt wallet online transaction platform
 - An developement of RESTful API for an Online Payment Wallet application. This API performs all the fundamental CRUD operations of any Online Wallet Banking platform with user validation at every step.
 <br>
 # ER Diagram
+<hr>
 The following Diagram depicts the flow of our Entity Relation Diagram to simplify the work flow.
 <br>
 <br>
@@ -11,8 +12,9 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 <br>
 <br>
-
+<hr>
 # Team Member Roles And Responsibilities
+<hr>
 <br>
 <br>
 
@@ -30,6 +32,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 
 # Teach Stacks Implemented
+<hr>
 <br>
 <br>
 - Java
@@ -49,7 +52,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 
 # Modules
-
+<hr>
 - Login Logout User authentication
 - Wallet
 - BankAccount
@@ -61,7 +64,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 
 # Features
-
+<hr>
 <br>
 <hr>
 
@@ -75,7 +78,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 
 # Installation & Run
-
+<hr>
 <br>
 <br>
 
@@ -101,8 +104,10 @@ spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
 <br>
 
 # API Root Endpoint
+<hr>
 <br>
 <br>
+
 ```
 https://localhost:8888/
 ```
