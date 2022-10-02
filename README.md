@@ -20,7 +20,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 
-1) Bivek Rai  <li>Team Lead, Responsible for creating and implementing the ER diagram and flow of the project.
+<lu> Bivek Rai  <li>Team Lead, Responsible for creating and implementing the ER diagram and flow of the project.
 
 2) Yogesh Saini <li>Responsible for creating the Repository while making sure of proper implementation Of Controllers
 
