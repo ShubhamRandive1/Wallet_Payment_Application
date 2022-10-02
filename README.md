@@ -70,7 +70,6 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 # Features
 <hr>
 <br>
-<hr>
 
 - User Login authrntication
 - validation for the account number
