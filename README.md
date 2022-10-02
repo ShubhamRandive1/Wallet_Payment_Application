@@ -1,7 +1,7 @@
 # Wallet_Payment_Application
 <hr>
-- An Collabrative Project Consisting Of the 5 Developer Depicting the implementation of the payemnt wallet online transaction platform
-- An developement of RESTful API for an Online Payment Wallet application. This API performs all the fundamental CRUD operations of any Online Wallet Banking platform with user validation at every step.
+<li>An Collabrative Project Consisting Of the 5 Developer Depicting the implementation of the payemnt wallet online transaction platform
+<li>An developement of RESTful API for an Online Payment Wallet application. This API performs all the fundamental CRUD operations of any Online Wallet Banking platform with user validation at every step.
 <br>
 # ER Diagram
 <hr>
@@ -18,15 +18,15 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 
-1) Bivek Rai - Team Lead, Responsible for creating and implementing the ER diagram and flow of the project.
+1) Bivek Rai  <li>Team Lead, Responsible for creating and implementing the ER diagram and flow of the project.
 
-2) Yogesh Saini - Responsible for creating the Repository while making sure of proper implementation Of Controllers
+2) Yogesh Saini <li>Responsible for creating the Repository while making sure of proper implementation Of Controllers
 
-3) Shubham Randive - Responsible For handeling the Exceptions and Creating the Service Layer.
+3) Shubham Randive <li>Responsible For handeling the Exceptions and Creating the Service Layer.
 
-4) Bhanu Prathap Goud - Responsible for The frontent Layer while implementing proper RESTful API naming Conventions.
+4) Bhanu Prathap Goud <li>Responsible for The frontent Layer while implementing proper RESTful API naming Conventions.
 
-5) Partha Sarathi - Responsible for Creating the login and logout Session layer with proper validation.
+5) Partha Sarathi  <li>Responsible for Creating the login and logout Session layer with proper validation.
 
 <br>
 <br>
@@ -35,16 +35,17 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <hr>
 <br>
 <br>
-- Java
-- Spring
-- Spring Boot JPA
-- Hibernate
-- MySQL
-- Swagger
-- Lambok
-- AdvanceJavaScript(ES6+)
-- BootStrap 5
-- CSS3
+<li>Java
+<li>Spring
+<li>Spring Boot JPA
+<li>Hibernate
+<li>MySQL
+<li>Swagger
+<li>Lombok
+<li>HTML 5
+<li>AdvanceJavaScript(ES6+)
+<li>BootStrap 5
+<li>CSS3
 
 <br>
 <br>
@@ -53,12 +54,12 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 # Modules
 <hr>
-- Login Logout User authentication
-- Wallet
-- BankAccount
-- BeneficiaryDetails
-- BillPayment
-- Transaction
+<li>Login Logout User authentication
+<li>Wallet
+<li>BankAccount
+<li>BeneficiaryDetails
+<li>BillPayment
+<li>Transaction
 
 <br>
 <br>
