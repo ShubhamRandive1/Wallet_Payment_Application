@@ -12,7 +12,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 
-#Team Member Roles And Responsibilities
+# Team Member Roles And Responsibilities
 <br>
 <br>
 
@@ -29,7 +29,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 
-#Teach Stacks Implemented
+# Teach Stacks Implemented
 <br>
 <br>
 - Java
@@ -60,7 +60,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 
-#Features
+# Features
 
 <br>
 <hr>
@@ -74,7 +74,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 
-#Installation & Run
+# Installation & Run
 
 <br>
 <br>
@@ -100,7 +100,7 @@ spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
 <br>
 <br>
 
-#API Root Endpoint
+# API Root Endpoint
 <br>
 <br>
 ```
