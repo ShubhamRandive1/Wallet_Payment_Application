@@ -41,7 +41,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <br>
 <br>
 <li>Java
-<li>Spring
+<li>Spring framework
 <li>Spring Boot JPA
 <li>Hibernate
 <li>MySQL
