@@ -47,10 +47,8 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 <li>MySQL
 <li>Swagger
 <li>Lombok
-<li>HTML 5
-<li>AdvanceJavaScript(ES6+)
-<li>BootStrap 5
-<li>CSS3
+
+  
 
 <br>
 <br>
